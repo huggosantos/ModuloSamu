@@ -2,8 +2,9 @@
 function capturarImagem(){
  navigator.camera.getPicture(onSuccess, onFail,
  {
+ 	quality: 25,
     destinationType : Camera.DestinationType.DATA_URL,
-    sourceType : Camera.PictureSourceType.CAMERA
+    //sourceType : Camera.PictureSourceType.CAMERA
 }
 );
 }
