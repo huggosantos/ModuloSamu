@@ -1,0 +1,53 @@
+
+p, h1, h2, h3{
+	font-family: sans-serif;
+}
+a{text-decoration: nome;
+color:#fff;}
+
+#texto{
+	margin-left: 3%;
+	margin-right: 3%;
+	text-align: justify;
+	color: #494949;
+}
+#texto2{
+	text-align: center;
+	color: #494949;
+}
+#textoNegrito{
+	font-weight: bolder;
+	text-align: center;
+	color: #494949;
+}
+
+#texto3{
+	font-weight: bolder;
+	text-align: justify;
+	color: #494949;
+}
+#titulo{
+	font-size: 2em;
+	color: #212121;
+	font-weight: bold;
+}
+#subtitulo{
+	margin-top: 1em;
+	font-size: 1.5em;
+	color: #212121;
+	font-weight: bold;
+
+}
+#titulo2{
+	color: #212121;
+}
+#titulo3{
+	font-weight: bolder;
+	color: #fff;
+	margin-top: 5em;
+	margin-left: 2em;
+	position: absolute;
+	font-size:200%
+	
+
+}
