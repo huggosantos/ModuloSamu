@@ -1,0 +1,72 @@
+<h5 class="header center" id="titulo">Chamado Emergência</h5>
+<br>
+<div class="row" >
+  <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
+     <label>Tipo de Chamado</label>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.tipo"  ng-value="false" type="radio" id="test3"  />
+      <label for="test3">Clínico</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.tipo" ng-value="true" type="radio" id="test4"/>
+      <label for="test4">Acidente</label>
+    </p>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="nome" type="text" class="validate" ng-model="chamado.nome" ng-required="true">
+        <label for="nome">Nome</label>
+      </div>
+    </div>
+    <div ng-if="!chamado.tipo" class="row">
+      <div class="input-field col s6">
+        <input  id="rua" type="text" class="validate" ng-model="chamado.rua" ng-required="true">
+        <label for="rua">Rua</label>
+      </div>
+      <div ng-if="!chamado.tipo" class="input-field col s6">
+        <input  id="numero" type="number" class="validate" ng-model="chamado.numero" ng-required="true">
+        <label for="numero">Número</label>
+      </div>
+    </div>
+    <div ng-if="!chamado.tipo" class="row">
+      <div class="input-field col s6">
+        <input id="bairro" type="text" class="validate" ng-model="chamado.bairro" ng-required="true">
+        <label for="bairro">Bairro</label>
+      </div>
+      <div ng-if="!chamado.tipo" class="input-field col s6">
+        <input id="cidade" type="text" class="validate" ng-model="chamado.cidade" ng-required="true">
+        <label for="cidade">Cidade</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="descricao" type="text" class="validate" ng-model="chamado.descricao" ng-required="true">
+        <label for="descricao">Descrição</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="ref" type="text" class="validate" ng-model="chamado.ref" ng-required="true">
+        <label for="ref">Ponto de Referência</label>
+      </div>
+    </div>
+   
+    <table>  
+      <tbody>
+        <tr>
+          <td> Capturar imagem do Acidente</td>
+          <td><button  onclick="capturarImagem();" ng-disabled="!chamado.tipo" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo_camera</i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+    
+  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a>Enviar 
+   <i class="material-icons right">send</i>
+   </a> 
+ </button>
+
+</form>                   
+</div>
+
+
