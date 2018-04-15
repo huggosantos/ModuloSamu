@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>Geolocalização</title>
+</head>
+<body>
+<input type="button" value="Iniciar Captura" onClick="iniciarCaptura()">
+<input type="button" value="Parar Captura" onClick="pararCaptura()"><br>
+<br/>
+<span id="result"></span>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript">
+
+        var watchID;
+
+        function iniciarCaptura(){
+            watchID = navigator.geolocation.watchPosition(mostrarTela, fail, { timeout: 30000 });
+        }
+
+        function mostrarTela(position){
+            var html ='Latitude: ' + position.coords.latitude         + '<br />' +
+                      'Longitude: '         + position.coords.longitude         + '<br />' +
+                      'Altitude: '          + position.coords.altitude          + '<br />' +
+                      'Precisão: '          + position.coords.accuracy          + '<br />' +
+                      'Precisão de altitude: ' + position.coords.altitudeAccuracy  + '<br />' +
+                      'Direção: '           + position.coords.heading           + '<br />' +
+                      'Velocidade: '        + position.coords.speed             + '<br />' +
+                      'Timestamp: '         + new Date(position.timestamp)      + '<br />';
+
+
+            var result = document.getElementById("result");
+
+            result.innerHTML = html;
+        }
+
+        function fail(error){
+            alert('Error: ' + error.code);
+            alert('Error: ' + error.message);
+        }
+
+        function pararCaptura(){
+            if(watchID){
+                navigator.geolocation.clearWatch(watchID);
+                watchID=null;
+            }
+
+        }
+
+</script>
+</body>
+</html>
