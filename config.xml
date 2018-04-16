@@ -11,12 +11,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-versionCode" value="25" />
-    <preference name="android-minSdkVersion" value="16" />
-    <preference name="cdvVersionCode" value="16" />
-    <preference name="cdvMinSdkVersion" value="16" />
-    <preference name="cdvBuildMultipleApks" value="true" />
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    
 
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
