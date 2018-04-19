@@ -34,7 +34,8 @@ app.controller('formularioChamado', function($scope, $http, $routeParams, $locat
  toTop();
  $scope.enviarForm = function(chamado){
  var value = window.localStorage.getItem("chave");
-  console.log(value);
+alert(value);
+alert(latitude);
   if(latitude==undefined){
    Materialize.toast('Chamado não enviado, Ativar geolocalização !', 7000)
  }
