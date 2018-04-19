@@ -11,9 +11,13 @@ app.config(function($routeProvider) {
     templateUrl: 'paginas/sobre.html',
     controller: 'sobre'
   })
-  .otherwise('/formularioChamado', {
-   templateUrl: 'templates/formularioChamado.html',
-   controller: 'formularioChamado'
+  .when('/andamentoChamado', {
+    templateUrl: 'paginas/andamentoChamado.html',
+    controller: 'sobre'
+  })
+  .otherwise('/sobre', {
+   templateUrl: 'templates/sobre.html',
+   controller: 'sobre'
  });
 }).run(function() {
     //remove 300ms delay touch
@@ -72,7 +76,7 @@ alert(latitude);
   }).
    success(function (data) {
     $scope.success = true;
-    alert("Chamado Enviado com sucesso");
+    alert("Chamado Envidao");
     latitude=undefined;
     longitude=undefined;
     $location.path("/sobre");
