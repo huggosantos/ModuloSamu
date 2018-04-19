@@ -72,7 +72,7 @@ alert(latitude);
   }).
    success(function (data) {
     $scope.success = true;
-    alert(data);
+    alert("Chamado Enviado com sucesso");
     latitude=undefined;
     longitude=undefined;
     $location.path("/sobre");
