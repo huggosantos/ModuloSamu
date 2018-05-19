@@ -1,3 +1,7 @@
+
+#sidenav-overlay {
+	z-index: 996;
+}
 p, h1, h2, h3{
 	font-family: sans-serif;
 }
@@ -25,7 +29,17 @@ a{
 	margin-left:10px;
 }
 /* FIM TOPO*/
+
 /*SIDE NAV*/
+
+/* INPUTS*/
+label{
+	color:#000!important;
+	font-size:20px!important;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+/* FIM INPUTS*/
 .side-nav{
 	top: 55px;
 }
@@ -77,4 +91,12 @@ a{
 	margin-left: 2em;
 	position: absolute;
 	font-size:200%
+}
+
+@media only screen and (max-width: 992px){ 
+	nav .brand-logo {
+		left: 36%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-26%);
+	}
 }

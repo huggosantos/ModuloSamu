@@ -23,9 +23,10 @@ function mostrarTela(position){
 }
 
 function fail(error){   
-     Materialize.toast('Ativar Localização do Aparelho', 3000)
-  
-
+  M.toast({
+    html: 'Ativar Localização do Aparelho',
+    displayLength: 4000
+  });
 }
 
 function pararCaptura(){

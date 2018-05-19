@@ -10,53 +10,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   
   <title>ModuloSAMU</title>
 
-  <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link type="text/css" rel="stylesheet" href="css/estilo.css"  media="screen,projection"/>
 
 </head>
 <body ng-app="MyApp">
-
   <div class="navbar-fixed">
-    <nav >
-      <div class="nav-wrapper blue lighten-3 ">
-        <a href="#!" class="brand-logo">Chamados Emergênciais</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><img style="margin-top:20%;" src="fonts/menu.svg"></a>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="#telaPrincipal" onclick="$('.button-collapse').sideNav('hide'); iniciarCaptura();">Iniciar Chamado</a></li>
-          <li><a href="#andamentoChamado" onclick="$('.button-collapse').sideNav('hide');" >Adamento do Chamado</a></li>
-          <li><a href="#sobre" onclick="$('.button-collapse').sideNav('hide');" >Sobre</a></li>
-        </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Chamados Emergenciais</a>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
       </div>
     </nav>
-  </div>       
+  </div>
+  <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#!user"><img class="circle" src="http://via.placeholder.com/100x100"></a>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#telaPrincipal" onclick="$('.button-collapse').sideNav('hide'); iniciarCaptura();">Iniciar Chamado</a></li>
+    <li><a href="#andamentoChamado" onclick="$('.button-collapse').sideNav('hide');" >Adamento do Chamado</a></li>
+    <li><a href="#sobre" onclick="$('.button-collapse').sideNav('hide');" >Sobre</a></li>
+  </ul>
+ <!-- <ul class="sidenav" id="mobile-demo">
+    <li><a href="#formularioChamado sidenav-close" onclick="$('.button-collapse').sideNav('hide'); iniciarCaptura();">Iniciar Chamado</a></li>
+    <li><a href="#andamentoChamado" onclick="$('.button-collapse').sideNav('hide');" >Adamento do Chamado</a></li>
+    <li><a href="#sobre" onclick="$('.button-collapse').sideNav('hide');" >Sobre</a></li>
+  </ul> -->
 
   <div class="content" id="divDinamica">
-   <ng-view></ng-view>
- </div>
+    <ng-view></ng-view>
+  </div>
 
 
 
-<!-- Links && scripts -->
+  <!-- Links && scripts -->
 
- <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
- <script type="text/javascript" src="js/materialize.min.js"></script>
- <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="js/materialize.js"></script> -->
 
 
- <script type="text/javascript">
-  app.initialize();
-</script>
-<script type="text/javascript" >     
- $(".button-collapse").sideNav({menuWidth: 245}); 
+  <script type="text/javascript">
+    app.initialize();
+  </script>
+  <script type="text/javascript" >     
+  // $(".button-collapse").sideNav({menuWidth: 245}); 
+  $(document).ready(function(){
+    $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is opened
+      onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
+    }
+    );
+  });
 </script>
 
 <!-- Links Agular -->
 <script src='bower_components/angular/angular.min.js'></script>
 <script src='bower_components/angular-route/angular-route.js'></script>
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- <script src="bower_components/fastclick/lib/fastclick.js"></script> -->
 <!-- End Links Agular -->
 
 <script src='js/rotas.js'></script>
