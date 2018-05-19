@@ -1,5 +1,4 @@
 var app = angular.module('MyApp', ['ngRoute']);
-var telaPrincipal;
 
 app.config(function($routeProvider) {
   /*ROTAS*/
@@ -19,6 +18,10 @@ app.config(function($routeProvider) {
    .when('/telaPrincipal', {
     templateUrl: 'paginas/telaPrincipal.html',
     controller: 'telaPrincipal'
+  })
+    .when('/preChamadoSamu', {
+    templateUrl: 'paginas/preChamadoSamu.html',
+    controller: 'formularioChamado'
   })
   .otherwise('/telaPrincipal', {
    templateUrl: 'templates/telaPrincipal.html',
@@ -46,8 +49,44 @@ app.controller('telaPrincipal', function($scope, $http, $routeParams, $location)
 
 
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
+var statusVitima;
+
  iniciarCaptura();
  toTop();
+
+$scope.vitimaComSangue = function () {
+  statusVitima = "Vitima com Sangue";
+}
+
+$scope.vitimaComDor = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaSemMovimento = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaComFratura = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaComFebre = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaComTontura = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaComDorPeito = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+$scope.vitimaComTontura = function () {
+  statusVitima = "Vitima com Dor";
+}
+
+
  $scope.enviarForm = function(chamado){
  var value = window.localStorage.getItem("chave");
 alert(value);
@@ -88,14 +127,15 @@ alert(latitude);
   }).
    success(function (data) {
     $scope.success = true;
-    alert("Chamado Envidao");
+    alert("Chamado Enviado !");
     latitude=undefined;
     longitude=undefined;
-    $location.path("/sobre");
+    $location.path("/telaPrincipal");
     $scope.user = {};
   }).
    error(function (data) {
     $scope.error = true;
+    alert("Erro ao enviar, verifique sua conxão !");
 
   }); 
  }

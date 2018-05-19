@@ -23,7 +23,7 @@ function mostrarTela(position){
 }
 
 function fail(error){   
-     Materialize.toast('Ativar Localização do Aparelho', 4000)
+     Materialize.toast('Ativar Localização do Aparelho', 3000)
   
 
 }
