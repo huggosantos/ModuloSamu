@@ -1,4 +1,5 @@
 var app = angular.module('MyApp', ['ngRoute']);
+var telaPrincipal;
 
 app.config(function($routeProvider) {
   /*ROTAS*/
@@ -15,9 +16,13 @@ app.config(function($routeProvider) {
     templateUrl: 'paginas/andamentoChamado.html',
     controller: 'sobre'
   })
-  .otherwise('/sobre', {
-   templateUrl: 'templates/sobre.html',
-   controller: 'sobre'
+   .when('/telaPrincipal', {
+    templateUrl: 'paginas/telaPrincipal.html',
+    controller: 'telaPrincipal'
+  })
+  .otherwise('/telaPrincipal', {
+   templateUrl: 'templates/telaPrincipal.html',
+   controller: 'telaPrincipal'
  });
 }).run(function() {
     //remove 300ms delay touch
@@ -30,9 +35,15 @@ function toTop(){
   }, 800, 'linear');
 }
 
-app.controller('sobre', function($scope) {  
+
+app.controller('sobre', function($scope, $http, $routeParams, $location) {  
+  toTop();  
+});
+
+app.controller('telaPrincipal', function($scope, $http, $routeParams, $location) {  
   toTop();
 });
+
 
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
  iniciarCaptura();
