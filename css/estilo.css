@@ -1,10 +1,39 @@
-
 p, h1, h2, h3{
 	font-family: sans-serif;
 }
-a{text-decoration: nome;
-color:#fff;}
-
+a{
+	text-decoration: nome;
+	color:#fff;
+}
+#divDinamica{
+	position: relative;
+}
+.brand-logo{
+	font-size:20px!important;
+}
+.tela-chamado img{
+	max-width: 150px;
+}
+.tela-chamado a>h1{
+	color: #000;
+	font-weight:900;
+	font-size:15px;
+	letter-spacing: 1px;
+}
+/* TOPO */
+.button-collapse {
+	margin-left:10px;
+}
+/* FIM TOPO*/
+/*SIDE NAV*/
+.side-nav{
+	top: 55px;
+}
+.side-nav li{
+	background-color: #e0e0e0;
+	margin:2px 0;
+}
+/*FIM SIDE NAV*/
 #texto{
 	margin-left: 3%;
 	margin-right: 3%;
@@ -48,6 +77,4 @@ color:#fff;}
 	margin-left: 2em;
 	position: absolute;
 	font-size:200%
-	
-
 }

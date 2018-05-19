@@ -1,13 +1,11 @@
 <h5 class="header center" id="titulo">Chamado Emergência</h5>
 <br>
-<div class="row" >
-  <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
-     <label>Tipo de Chamado</label>
+<div class="row">
+  <form id="formChamado" name="formChamado" ng-submit="salveSubmit()">
+    <label>Tipo de Chamado</label>
     <p>
-      <input class="with-gap" name="group1" ng-model="chamado.tipo"  ng-value="false" type="radio" id="test3"  />
+      <input class="with-gap" name="group1" ng-model="chamado.tipo"  ng-value="false" type="radio" id="test3"/>
       <label for="test3">Clínico</label>
-    </p>
-    <p>
       <input class="with-gap" name="group1" ng-model="chamado.tipo" ng-value="true" type="radio" id="test4"/>
       <label for="test4">Acidente</label>
     </p>
@@ -50,7 +48,7 @@
         <label for="ref">Ponto de Referência</label>
       </div>
     </div>
-   
+
     <table>  
       <tbody>
         <tr>
@@ -60,12 +58,11 @@
         </tr>
       </tbody>
     </table> 
-    
-  <button class="btn green" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a>Enviar 
-   <i class="material-icons right">send</i>
-   </a> 
- </button>
 
+    <button class="btn green" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a>Enviar 
+      <i class="material-icons right">send</i>
+    </a> 
+  </button>
 </form>                   
 </div>
 
