@@ -15,6 +15,12 @@ a{
 .brand-logo{
 	font-size:20px!important;
 }
+
+.telaApresentacao{
+	background-image: url(img/Imagem_App.png);
+	background-repeat: no-repeat;
+
+}
 .tela-chamado img{
 	max-width: 150px;
 }

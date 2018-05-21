@@ -1,4 +1,5 @@
 var app = angular.module('MyApp', ['ngRoute']);
+var statusVitima;
 
 app.config(function($routeProvider) {
   /*ROTAS*/
@@ -23,8 +24,12 @@ app.config(function($routeProvider) {
     templateUrl: 'paginas/preChamadoSamu.html',
     controller: 'formularioChamado'
   })
-  .otherwise('/telaPrincipal', {
-   templateUrl: 'templates/telaPrincipal.html',
+    .when('/telaApresentacao', {
+    templateUrl: 'paginas/telaApresentacao.html',
+    controller: 'telaPrincipal'
+  })
+  .otherwise('/telaApresentacao', {
+   templateUrl: 'templates/telaApresentacao.html',
    controller: 'telaPrincipal'
  });
 }).run(function() {
@@ -49,7 +54,7 @@ app.controller('telaPrincipal', function($scope, $http, $routeParams, $location)
 
 
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
-var statusVitima;
+
 
  iniciarCaptura();
  toTop();
@@ -63,27 +68,27 @@ $scope.vitimaComDor = function () {
 }
 
 $scope.vitimaSemMovimento = function () {
-  statusVitima = "Vitima com Dor";
+  statusVitima = "Vitima sem Movimento";
 }
 
 $scope.vitimaComFratura = function () {
-  statusVitima = "Vitima com Dor";
+  statusVitima = "Vitima com Fraturas";
 }
 
 $scope.vitimaComFebre = function () {
-  statusVitima = "Vitima com Dor";
+  statusVitima = "Vitima com Febre";
 }
 
 $scope.vitimaComTontura = function () {
-  statusVitima = "Vitima com Dor";
+  statusVitima = "Vitima com Tontura";
 }
 
 $scope.vitimaComDorPeito = function () {
-  statusVitima = "Vitima com Dor";
+  statusVitima = "Vitima com Dor no Peito";
 }
 
-$scope.vitimaComTontura = function () {
-  statusVitima = "Vitima com Dor";
+$scope.vitimaComQueimadura = function () {
+  statusVitima = "Vitima com Queimadura";
 }
 
 
