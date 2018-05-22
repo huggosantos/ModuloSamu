@@ -17,10 +17,11 @@ a{
 	font-size:20px!important;
 }
 
-.telaApresentacao{		 
+.telaApresentacao{		
+background-image: url(img/Imagem_App.png); 
 	overflow: hidden!important; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
     width: 100%!important;
-    height: 640px!important;
+    height: 635px!important;
     position: relative!important; /* criamos um contexto para posicionamento */
 }
 
