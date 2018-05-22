@@ -1,4 +1,4 @@
-
+﻿
 #sidenav-overlay {
 	z-index: 996;
 }
@@ -20,7 +20,7 @@ a{
 .telaApresentacao{		 
 	overflow: hidden!important; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
     width: 100%!important;
-    height: 100%!important;
+    height: 600px!important;
     position: relative!important; /* criamos um contexto para posicionamento */
 }
 
