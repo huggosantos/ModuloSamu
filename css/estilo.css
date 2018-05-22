@@ -22,7 +22,7 @@ background-image: url(img/Imagem_App.png);
 	overflow: hidden!important; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
     width: 100%!important;
     height: 632px!important;
-    position: relative!important; /* criamos um contexto para posicionamento */
+    position: fixed!important; /* criamos um contexto para posicionamento */
 }
 
 
