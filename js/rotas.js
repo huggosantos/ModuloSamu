@@ -50,6 +50,7 @@ app.controller('sobre', function($scope, $http, $routeParams, $location) {
 
 app.controller('telaPrincipal', function($scope, $http, $routeParams, $location) {  
   toTop();
+   $(window).scrollTop(0);
 });
 
 

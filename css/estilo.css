@@ -11,16 +11,20 @@ a{
 }
 #divDinamica{
 	position: relative;
+
 }
 .brand-logo{
 	font-size:20px!important;
 }
 
-.telaApresentacao{
-	background-image: url(img/Imagem_App.png);
-	background-repeat: no-repeat;
-
+.telaApresentacao{		 
+	overflow: hidden!important; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
+    width: 100%!important;
+    height: 100%!important;
+    position: relative!important; /* criamos um contexto para posicionamento */
 }
+
+
 .tela-chamado img{
 	max-width: 150px;
 }
