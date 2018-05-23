@@ -102,8 +102,8 @@ $scope.vitimaComQueimadura = function () {
 
  $scope.enviarForm = function(chamado){
 var value = window.localStorage.getItem("chave");
-alert(value);
-alert(latitude);
+//alert(value);
+//alert(latitude);
   if(latitude==undefined){
    Materialize.toast('Chamado não enviado, Ativar geolocalização !', 7000)
  }
@@ -139,18 +139,19 @@ alert(latitude);
    success(function (data) {
     $scope.aux2=false;
     $scope.aux=false;
-    $scope.success = true;
+    //$scope.success = true;
     alert("Chamado Enviado com Sucesso!");
     latitude=undefined;
     longitude=undefined;
     $location.path("/telaApresentacao");
-    $scope.user = {};
+   // $scope.user = {};
   }).
    error(function (data) {
     $scope.aux2=false;
     $scope.aux=false;
     $scope.error = true;
     alert("Erro ao enviar, verifique sua conxão !");
+    $location.path("/telaApresentacao");
 
   }); 
  }
