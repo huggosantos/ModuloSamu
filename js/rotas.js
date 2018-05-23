@@ -58,7 +58,7 @@ app.controller('formularioChamado', function($scope, $http, $routeParams, $locat
 // metodo que faz a logica para mostrar o Loader na tela 
 $scope.mostrarLoader = function(){
   if($scope.aux==null || $scope.aux==false || $scope.aux==true){
-   $scope.aux=false;   
+   $scope.aux=true;   
    $scope.aux2=true;
  }
 }
@@ -101,7 +101,7 @@ $scope.vitimaComQueimadura = function () {
 
 
  $scope.enviarForm = function(chamado){
- var value = window.localStorage.getItem("chave");
+var value = window.localStorage.getItem("chave");
 alert(value);
 alert(latitude);
   if(latitude==undefined){
