@@ -106,9 +106,13 @@ var value = window.localStorage.getItem("chave");
 //alert(latitude);
   if(latitude==undefined){
    Materialize.toast('Chamado não enviado, Ativar geolocalização !', 7000)
+    $scope.aux2=false;
+    $scope.aux=false;
  }
  else if($scope.chamado.tipo==true && value==undefined){
    Materialize.toast('Chamado não enviado, Enviar Foto !', 7000)
+    $scope.aux2=false;
+    $scope.aux=false;
  }else{
   
    console.log(value);
