@@ -55,6 +55,13 @@ app.controller('telaPrincipal', function($scope, $http, $routeParams, $location)
 
 
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
+// metodo que faz a logica para mostrar o Loader na tela 
+$scope.mostrarLoader = function(){
+  if($scope.aux==null || $scope.aux==false || $scope.aux==true){
+   $scope.aux=false;   
+   $scope.aux2=true;
+ }
+}
 
 
  iniciarCaptura();
@@ -130,6 +137,8 @@ alert(latitude);
 
   }).
    success(function (data) {
+    $scope.aux2=false;
+    $scope.aux=false;
     $scope.success = true;
     alert("Chamado Enviado com Sucesso!");
     latitude=undefined;
@@ -138,6 +147,8 @@ alert(latitude);
     $scope.user = {};
   }).
    error(function (data) {
+    $scope.aux2=false;
+    $scope.aux=false;
     $scope.error = true;
     alert("Erro ao enviar, verifique sua conxão !");
 
