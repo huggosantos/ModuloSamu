@@ -113,15 +113,13 @@ alert(latitude);
     data: {
       nome: $scope.chamado.nome,
       numero: $scope.chamado.numero,
-      rua: $scope.chamado.rua,
-      bairro: $scope.chamado.bairro,
-      cidade: $scope.chamado.cidade,
       ref: $scope.chamado.ref,
       clinico: $scope.chamado.tipo,
       latitude: latitude,
       longitude: longitude,
       descricao: $scope.chamado.descricao,
       img: value,
+      statusDaVitima : statusVitima,
 
     },
     headers: {
@@ -133,10 +131,10 @@ alert(latitude);
   }).
    success(function (data) {
     $scope.success = true;
-    alert("Chamado Enviado !");
+    alert("Chamado Enviado com Sucesso!");
     latitude=undefined;
     longitude=undefined;
-    $location.path("/telaPrincipal");
+    $location.path("/telaApresentacao");
     $scope.user = {};
   }).
    error(function (data) {
